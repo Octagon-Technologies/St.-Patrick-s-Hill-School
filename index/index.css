@@ -11,8 +11,8 @@
 :root {
   --green: #008d77;
   --gold: #f6bc1c;
-  --lightGreen: #43e173;
-  --darkGreen: #1d803b;
+  --lightBlack: #393939;
+
   --transparent_orange: rgba(113, 30, 0, 0.3);
   --appBlack: #131313;
   --appBlackTransparent: rgba(19, 19, 19, 0.3);
@@ -82,15 +82,16 @@ body {
   position: absolute;
   top: 20px;
   left: 40px;
-  height: 90px;
+  height: 85px;
   object-fit: cover;
   z-index: 5;
 }
 
+/* Menu Bar */
 .nav-bar {
   position: absolute;
-  right: 40px;
-  top: 60px;
+  right: 45px;
+  top: 40px;
   z-index: 5;
 }
 
@@ -105,19 +106,82 @@ body {
   text-decoration: none;
   color: white;
   font-weight: 600;
+  font-size: 1.15rem;
 }
 
 .nav-bar ul li a.active {
   background-color: white;
-  padding: 8px 16px;
+  padding: 8px 20px;
   border-radius: 24px;
   color: var(--darkGreen);
 }
 
-.nav-bar ul li a:hover {
+.nav-bar ul li a:hover:not(.active) {
   color: var(--gold);
 }
 
+#openMenuBtn,
+#closeMenuBtn {
+  display: none;
+}
+
+/* Menu: Responsive */
+@media screen and (max-width: 600px) {
+  .nav-bar {
+    width: 225px;
+    background-color: var(--green);
+    top: 0;
+    right: -225px;
+    height: 100vh;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    transition: all 1s;
+  }
+
+  #logo {
+    height: 65px;
+    left: 16px;
+  }
+
+  #openMenuBtn {
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    font-size: 1.4rem;
+    z-index: 5;
+    font-weight: 900;
+    color: white;
+  }
+
+  #closeMenuBtn {
+    display: block;
+    font-weight: 900;
+    margin-top: 30px;
+    margin-left: 14px;
+    font-size: 1.4rem;
+    color: white;
+  }
+
+  .nav-bar ul {
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+    margin-top: 24px;
+    gap: 16px;
+  }
+
+  .nav-bar ul li a {
+    display: inline-block;
+    padding: 8px;
+    width: 100%;
+    text-align: center;
+    border-radius: 24px;
+    text-transform: uppercase;
+  }
+}
+
+/* Campuses */
 .campuses {
   width: 98vw;
   height: 98vh;
@@ -130,59 +194,194 @@ body {
 .campuses h2 {
   padding-top: 24px;
   text-align: center;
+  color: var(--green);
+  font-size: 800;
+  font-size: 1.9rem;
+}
+
+.campuses p {
+  width: 60%;
+  text-align: center;
+  margin: auto;
+  font-size: 1.2rem;
+  margin-top: 12px;
+  color: #393939;
 }
 
 .campus-container {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 90%;
+  width: 80%;
   margin: auto;
-  margin-top: 24px;
+  margin-top: 30px;
 }
 
 .campus {
+  position: relative;
   border-radius: 12px;
-  width: 37.5vw;
+  width: 32.5vw;
   height: fit-content;
   cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   background-color: white;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
 }
 
-.campus img {
+.campus-image {
+  position: relative;
   width: 100%;
+  height: fit-content;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.campus-image::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+}
+
+.campus-image img {
+  width: 100%;
+  display: block;
+  /* height: 100%; */
   aspect-ratio: 1;
   object-fit: cover;
   object-position: center;
-  border-radius: 12px;
+}
+
+.campus-image p {
+  position: absolute;
+  bottom: 16px;
+  font-weight: 700;
+  left: 50%;
+  font-size: 1.45rem;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  transition: all 1s;
+  opacity: 1;
+}
+
+/* Change :hover to .active */
+.campus:hover .campus-image p , /* For Laptop */
+.campus.active .campus-image p {
+  /* For Mobile */
+  opacity: 0;
 }
 
 .campus .body {
   display: flex;
+  transform: scaleY(0);
+  opacity: 0;
+  transform-origin: top;
+  height: auto;
+  overflow: hidden;
   max-height: 0px;
-  padding-bottom: 12px;
   color: white;
   overflow: hidden;
   flex-direction: column;
   align-items: center;
-  transition: all 1.5s 0s;
+  transition: all 1.25s 0s;
 }
 
 .campus:hover .body {
-    max-height: 500px;
+  transform: scaleY(1);
+  opacity: 1;
+  max-height: 200px;
 }
 
-.campus h3 {
+.campus .body h3 {
   margin-top: 12px;
   font-size: 1.3rem;
   color: var(--green);
 }
 
-.campus p {
-    color: black;
+.campus .body p {
+  color: black;
   text-align: center;
-  margin: 6px 12px;
+  margin: 4px 12px 28px 12px;
   font-size: 1rem;
   max-width: 30vw;
+}
+
+/* Campuses: Responsive */
+@media screen and (max-width: 600px) {
+  .campuses h2 {
+    font-size: 1.4rem;
+  }
+  
+    .campuses p {
+    width: 80%;
+    font-size: 0.95rem;
+  }
+
+  .campus-container {
+    width: 95%;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .campus {
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+    background-color: white;
+    height: 40vh;
+    width: 100%;
+  }
+
+  .campus .campus-image {
+    height: 100%;
+    width: 100%;
+    transition: all 1s;
+  }
+
+  .campus:hover .campus-image {
+    width: 60vw;
+  }
+
+  .campus-image img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .campus-image p {
+    font-size: 0.95rem;
+    bottom: 8px;
+  }
+
+  .campus .body {
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    max-height: fit-content;
+    justify-content: center;
+  }
+
+  /* Change :hover to .active */
+  .campus:hover .body {
+    opacity: 1;
+    transition: all 2s 0.25s;
+  }
+
+  .campus:not(hover) .body {
+    transition: all 0.5s;
+  }
+
+  .campus .body p {
+    font-size: 0.95rem;
+    margin: 4px 4px;
+  }
+
+  /* .campus:hover .body {
+    max-height: fit-content;
+  } */
 }
