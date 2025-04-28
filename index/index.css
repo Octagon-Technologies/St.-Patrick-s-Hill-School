@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Smooch+Sans:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Iceberg&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Righteous&family=Smooch+Sans:wght@100..900&family=Tektur:wght@400..900&display=swap");
 
 * {
   margin: 0;
@@ -113,7 +113,7 @@ body {
   background-color: white;
   padding: 8px 20px;
   border-radius: 24px;
-  color: var(--darkGreen);
+  color: var(--green);
 }
 
 .nav-bar ul li a:hover:not(.active) {
@@ -181,22 +181,144 @@ body {
   }
 }
 
+/* About Us */
+.about-us {
+  width: 98vw;
+  margin: 24px auto;
+  background-color: white;
+  border-radius: 12px;
+  padding: 0 6% 5% 6%;
+}
+
+.about-us .content {
+  display: flex;
+  flex-direction: row;
+  height: 75vh;
+  width: 95%;
+  margin: auto;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  gap: 24px;
+}
+
+.about-us .info {
+  margin: auto 20px;
+  width: 45%;
+  font-size: 1.1rem;
+  line-height: 1.7rem;
+  color: #474747;
+  font-family: "Open Sans", serif;
+}
+
+#about-main p {
+  margin-top: 12px;
+  margin-bottom: 24px;
+}
+
+.about-us h6.about-type {
+  font-weight:600;
+  font-size: 1.25rem;
+  color: var(--green);
+}
+
+.about-section {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  padding: 0px 16px;
+  margin-bottom: 12px;
+}
+
+.about-section.active p {
+  max-height: 400px;
+  padding-bottom: 24px;
+}
+
+.about-section .header {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  align-items: center;
+  padding: 16px 0px;
+  justify-content: space-between;
+}
+
+.about-section .header i {
+  font-size: 1.15rem;
+  color: var(--green);
+}
+
+.about-section p {
+  overflow: hidden;
+  transition: all 1s;
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  max-height: 0px;
+}
+
+.about-us img {
+  width: 46%;
+  height: fit-content;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* About Us ~ Responsive */
+@media screen and (max-width:600px) {
+  .about-us {
+    padding-bottom: 8%;
+  }
+
+  .about-us .content {
+    margin-top: 26px;
+    flex-direction: column-reverse; 
+    height: fit-content;
+  }
+
+  .about-us .info {
+    width: 100%;
+  }
+
+  #about-main {
+    margin-top: 12px;
+  }
+
+  #about-main p {
+    margin-top: 4px;
+    margin-bottom: 30px;
+  }
+
+  .about-us img {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
 /* Campuses */
 .campuses {
   width: 98vw;
-  height: 98vh;
+  height: 90vh;
   margin: auto;
   border-radius: 12px;
   overflow: hidden;
   background: white;
 }
 
-.campuses h2 {
-  padding-top: 24px;
+.title {
+  padding-top: 32px;
   text-align: center;
   color: var(--green);
-  font-size: 800;
-  font-size: 1.9rem;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: "Advent Pro", sans-serif;
 }
 
 .campuses p {
@@ -314,11 +436,17 @@ body {
 
 /* Campuses: Responsive */
 @media screen and (max-width: 600px) {
-  .campuses h2 {
+  .campuses {
+    height: fit-content;
+    padding-bottom: 32px;
+  }
+
+
+  .title {
     font-size: 1.4rem;
   }
-  
-    .campuses p {
+
+  .campuses p {
     width: 80%;
     font-size: 0.95rem;
   }
@@ -380,8 +508,118 @@ body {
     font-size: 0.95rem;
     margin: 4px 4px;
   }
+}
 
-  /* .campus:hover .body {
-    max-height: fit-content;
-  } */
+/* Testimonials */
+#testimonials {
+  width: 98vw;
+  margin: auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding-bottom: 24px;
+  border-radius: 12px;
+  background-color: white;
+}
+
+#testimonials .mini-header {
+  text-align: center;
+  margin: auto;
+  margin-top: 8px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  width: 30%;
+}
+
+.testi-container {
+  margin: 30px auto;
+  display: flex;
+  width: 80%;
+  gap: 20px;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.testi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  cursor: pointer;
+  padding: 28px 24px;
+  border-radius: 12px;
+  transition: all 1s;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+}
+
+.testi:hover {
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.4);
+}
+
+.testi .profile-pic {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testi .username {
+  font-weight: 600;
+  margin-top: 20px;
+  font-size: 1.25rem;
+  font-family: "Advent Pro";
+}
+
+.testi .role {
+  color: var(--green);
+  margin-top: 4px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  font-family: "Iceberg", sans-serif;
+}
+
+.testi .message {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 400;
+  font-size: 0.9rem;
+  font-family: "Poppins";
+  color: rgb(100, 100, 100);
+}
+
+.testi .quote {
+  margin-top: 26px;
+  height: 16px;
+}
+
+@media screen and (max-width: 600px) {
+  #testimonials .mini-header {
+    width: 80%;
+  }
+
+  .testi-container {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .testi {
+    width: 100%;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    padding: 30px 6px;
+  }
+
+  .testi .profile-pic {
+    width: 65px;
+    height: 65px;
+  }
+
+  .testi .role {
+    margin-top: 2px;
+    font-size: 1rem;
+  }
+
+  .testi .message {
+    font-size: 0.95rem;
+    width: 90%;
+    line-height: 1.1 rem;
+  }
 }
