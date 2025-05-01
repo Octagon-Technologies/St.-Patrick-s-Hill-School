@@ -2,15 +2,20 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Home | St Patrick's Hill School</title>
 
     <link rel="stylesheet" href="/index/index.css" />
+    <link rel="stylesheet" href="/global/global.css" />
+
     <script
       src="https://kit.fontawesome.com/1b0c87ce69.js"
       crossorigin="anonymous"
     ></script>
   </head>
+
   <body>
     <div class="page-container">
       <div class="slider-wrapper">
@@ -28,75 +33,210 @@
           </div>
         </div>
 
+        <!-- Copy Paste to every page -->
+        <img id="logo" src="/images/branding/logo-plain.png" alt="" />
 
-        
-            <i id="openMenuBtn" class="fa-solid fa-bars"></i>
-            
+        <!-- <p id="openMenuBtn">M</p> -->
+        <i id="openMenuBtn" class="fa-solid fa-bars"></i>
 
-              <div class="nav-bar">
+        <div class="nav-bar">
+          <!-- <p id="closeMenuBtn">C</p> -->
+          <i id="closeMenuBtn" class="fa-solid fa-close"></i>
 
-            <i id="closeMenuBtn" class="fa-solid fa-close"></i>
-            
+          <ul>
+            <li class="active"><a class="mainTab" href="#">Home</a></li>
+            <li><a class="mainTab" href="/about/about.html">About</a></li>
+            <li>
+              <div class="extendedTabTitle">
+                <a class="mainTab">Campuses</a>
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
 
-        <ul>
-          <li><a class="active" href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Academic Excellence</a></li>
-          <li><a href="#">Extra Curricular</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
+              <div class="options">
+                <a class="subTab" href="#">Kiserian</a>
+                <a class="subTab" href="#">Malindi</a>
+              </div>
+            </li>
+            <li><a class="mainTab" href="#">Academic Excellence</a></li>
+            <li><a class="mainTab" href="#">Extra Curricular</a></li>
+            <li><a class="mainTab" href="#">Contact</a></li>
+          </ul>
+        </div>
       </div>
-      </div>
-
-      <img id="logo" src="images/branding/logo-plain.png" alt="" />
-
-
     </div>
-</div>
 
+    <main>
+      <div class="about-us">
+        <h2 class="title">Who We Are</h2>
 
-    <div class="campuses">
-      <h2>Campuses</h2>
-      <p>Discover our two outstanding campuses across the country, featuring world-class facilities and an exceptional team of passionate teachers.</p>
-
-      <div class="campus-container">
-        <div class="campus">
-          <div class="campus-image">
-                <img src="images/campuses/kiserian.jpg" alt="" />
-                <p class="campus-image-description">Kiserian</p>
+        <div class="content">
+          <div class="info">
+            <div id="about-main">
+              <h6 class="about-type">About Us</h6>
+              <p>
+                St. Patrick’s Hill Schools is a Christian co-educational
+                boarding and day school established with the aim of fostering
+                every student’s moral, intellectual, social, aesthetic and
+                physical development. The school was founded over two decades
+                ago on the vision of providing an all-round quality learning to
+                pupils in a relaxed and serene environment that assures every
+                child of maximum benefit in positive character growth and
+                academic excellence.
+              </p>
             </div>
 
-          <div class="body">
-            <h3>Kiserian</h3>
-            <p>Located in the hills of Kiserian, in the heart of Rongai</p>
-            <!-- <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Cupiditate voluptas ad quod laudantium accusamus, quasi officiis
-              animi iste repellat in accusantium, voluptatibus cum inventore hic
-              tempora tenetur, quisquam quia quo.
-            </p> -->
+            <div id="about-mission" class="about-section">
+              <div class="header">
+                <h6 class="about-type">Mission</h6>
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+              <p>
+                To foster and nurture a complete pupil in moral and aesthetic
+                values underpinned upon a strong belief in God’s guidance; to
+                inculcate in every learner the value of sound discipline in all
+                aspects of school life and beyond; to help every pupil aspire to
+                attain the highest possible achievement in all facets of
+                learning the better to become a worthy citizen of this world.
+              </p>
+            </div>
+
+            <div id="about-vision" class="about-section">
+              <div class="header">
+                <h6 class="about-type">Vision</h6>
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+              <p>
+                To create a learning institution of choice that is the dream and
+                envy of every learner in terms of quality professional service,
+                facilities and environment.
+              </p>
+            </div>
           </div>
-        </div>
 
-        <div class="campus">
+          <img src="images/campuses/school-picture.jpg" alt="" />
+        </div>
+      </div>
+
+      <div class="campuses">
+        <h2 class="title">Campuses</h2>
+        <p>
+          Discover our two outstanding campuses across the country, featuring
+          world-class facilities and an exceptional team of passionate teachers.
+        </p>
+
+        <div class="campus-container">
+          <div class="campus">
             <div class="campus-image">
-                <img src="images/campuses/kiserian.jpg" alt="" />
-                <p class="campus-image-description">Malindi</p>
+              <img src="images/campuses/kiserian.jpg" alt="" />
+              <p class="campus-image-description">Kiserian</p>
             </div>
 
-          <div class="body">
-            <h3>Kiserian</h3>
-            <p>Located in the hills of Kiserian, in the heart of Rongai</p>
-            <!-- <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Cupiditate voluptas ad quod laudantium accusamus, quasi officiis
-              animi iste repellat in accusantium, voluptatibus cum inventore hic
-              tempora tenetur, quisquam quia quo.
-            </p> -->
+            <div class="body">
+              <h3>Kiserian</h3>
+              <p>Located in the hills of Kiserian, in the heart of Rongai</p>
+            </div>
+          </div>
+
+          <div class="campus">
+            <div class="campus-image">
+              <img src="images/campuses/kiserian.jpg" alt="" />
+              <p class="campus-image-description">Malindi</p>
+            </div>
+
+            <div class="body">
+              <h3>Malindi</h3>
+              <p>Located in the shores of Malindi, in the heart of Mombasa</p>
+            </div>
           </div>
         </div>
       </div>
+
+      <div id="testimonials">
+        <h2 class="title">Testimonials</h2>
+        <p class="mini-header">What parents and alumni say about us</p>
+
+        <div class="testi-container">
+          <div class="testi">
+            <img class="profile-pic" src="images/slider/student.jpg" alt="" />
+            <p class="username">Abby Shauri</p>
+            <p class="role">Alumnus</p>
+            <p class="message">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
+              labore? Nostrum exercitationem assumenda dicta qui maiores et enim
+              perspiciatis, tempora, quibusdam velit veniam, eos unde. Veritatis
+              labore a voluptates veniam.
+            </p>
+            <img class="quote" src="/images/design/quote.svg" alt="" />
+          </div>
+
+          <div class="testi">
+            <img class="profile-pic" src="images/slider/student.jpg" alt="" />
+            <p class="username">Abby Shauri</p>
+            <p class="role">Alumnus</p>
+            <p class="message">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
+              labore? Nostrum exercitationem assumenda dicta qui maiores et enim
+              perspiciatis, tempora, quibusdam velit veniam, eos unde. Veritatis
+              labore a voluptates veniam.
+            </p>
+            <img class="quote" src="/images/design/quote.svg" alt="" />
+          </div>
+
+          <div class="testi">
+            <img class="profile-pic" src="images/slider/student.jpg" alt="" />
+            <p class="username">Abby Shauri</p>
+            <p class="role">Alumnus</p>
+            <p class="message">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
+              labore? Nostrum exercitationem assumenda dicta qui maiores et enim
+              perspiciatis, tempora, quibusdam velit veniam, eos unde. Veritatis
+              labore a voluptates veniam.
+            </p>
+            <img class="quote" src="/images/design/quote.svg" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <div class="contacts">
+        <img src="/images/design/kenya-map.png" alt="" />
+
+        <div class="content">
+          <div class="sub-contact">
+            <h6>Contact Us</h6>
+
+            <p>
+              Kiserian Campus Contacts <br />
+              Phone: 0701-221-952, 0786-304-6944 <br />
+              Email: info@brookhurstschool.or.ke <br /><br />
+
+              Lavington Campus Contacts <br />
+              Phone: 0114 178 784 <br />
+              Email: BISLavington@brookhurstschool.or.ke
+            </p>
+          </div>
+
+          <div class="sub-contact">
+            <h6>About Us</h6>
+
+            <p>
+              Brookhurst International School is a progressive, multicultural,
+              value based day and boarding school based in Kenya.
+            </p>
+          </div>
+        </div>
+
+        <div class="design-by">
+        <p class="copyright">© Patrick's Hill Schools 2025.</p>
+
+        <p class="author">
+          Designed by
+          <a href="https://da-chelimo.netlify.app/">Andrew Chelimo</a>
+        </p>
+      </div>
+      </div>
+    </main>
 
     <script src="/index/index.js"></script>
+    <script src="global/global.js"></script>
   </body>
 </html>
