@@ -1,0 +1,291 @@
+:root {
+  --green: #008d77;
+  --gold: #f6bc1c;
+  --textGrey: #3e484e;
+}
+
+.page-intro {
+  height: 65vh;
+  width: 100vw;
+}
+
+.page-intro img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: auto;
+  margin-top: 48px;
+  padding-bottom: 40px;
+  justify-content: center;
+  gap: 36px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.about-content .header {
+  flex-basis: 40%;
+}
+
+.about-content .header h6 {
+  font-size: 2rem;
+  font-family: "Iceberg";
+  font-weight: 500;
+  color: var(--green);
+}
+
+.about-content .header p {
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+.about-content .content {
+  flex-basis: 60%;
+}
+
+.about-content .content p {
+  font-size: 1.1rem;
+  line-height: 2rem;
+  font-weight: 400;
+  color: var(--textGrey);
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+@media screen and (max-width: 600px) {
+  .about-content {
+    flex-direction: column;
+    width: 90%;
+    gap: 30px;
+  }
+
+  .about-content .header {
+    width: 80%;
+  }
+
+  .about-content .header p {
+    margin-top: 8px;
+  }
+
+  .about-content .content {
+    margin-top: 14px;
+    width: 100%;
+  }
+}
+/*  
+
+
+
+
+
+
+
+
+*/
+/* Slogans */
+.slogans {
+  display: flex;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.85),
+      rgba(255, 255, 255, 0.85)
+    ),
+    url(/images/design/green-pattern.png);
+  flex-direction: row;
+  width: 100%;
+  gap: 5%;
+  margin-top: 10px;
+  padding: 4% 0;
+  justify-content: center;
+}
+
+.slogans div {
+  flex-basis: 35%;
+  justify-items: center;
+}
+
+.slogans h6 {
+  color: var(--green);
+  font-size: 2.2rem;
+  font-family: "Smooch Sans";
+  font-weight: 400;
+}
+
+.slogans p {
+  margin-top: 16px;
+  font-size: 1.05rem;
+  line-height: 1.5rem;
+  font-family: "Poppins";
+  font-weight: 300;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .slogans {
+    padding: 8% 5%;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .slogans h6 {
+    font-size: 1.6rem;
+  }
+
+  .slogans p {
+    text-align: left;
+    font-size: 1.1rem;
+    margin-top: 8px;
+  }
+}
+
+/* 
+
+
+
+
+
+
+
+
+
+*/
+/* Boarding  */
+.boarding {
+  width: 80%;
+  margin: auto;
+  margin-top: 3%;
+}
+
+.boarding h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  font-family: "Iceberg";
+  font-weight: 500;
+  color: var(--green);
+}
+
+.boarding p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+.boarding .features {
+  margin-top: 45px;
+  margin-bottom: 45px;
+}
+
+.boarding .features h3 {
+  font-size: 1.4rem;
+  font-family: "Iceberg";
+  color: var(--green);
+}
+
+.boarding .features ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 4px;
+  margin-top: 12px;
+  justify-content: space-between;
+}
+
+.boarding .features ul li {
+  width: 48%;
+  font-size: 1.05rem;
+}
+
+.collapsable {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.collapsable .header {
+  margin: 10px 0px;
+  display: flex;
+  flex-direction: row;
+  padding: 10px 24px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.collapsable .header h6 {
+  font-family: "Advent Pro";
+  font-size: 1.4rem;
+  width: 80%;
+  font-weight: 500;
+}
+
+.collapsable .header i {
+  font-size: 1rem;
+  background-color: white;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  align-content: center;
+  border-radius: 50%;
+  border: 2px var(--green) solid;
+  color: var(--green);
+  /* color: white; */
+}
+
+.collapsable.active .header i {
+  background-color: var(--green);
+  color: white;
+  border: 0px;
+}
+
+.collapsable .content p {
+  max-height: 0px;
+  transition: all 1.25s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin: 0px;
+  font-weight: 400;
+  color: var(--textGrey);
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+.collapsable.active .content p {
+  max-height: 300px;
+  margin: 10px 16px 30px 16px;
+}
+
+/* Boarding: Responsive */
+@media screen and (max-width: 600px) {
+  .boarding {
+    width: 90%;
+    margin-top: 12%;
+  }
+
+  .boarding p {
+    font-size: 1.05rem;
+  }
+
+  .boarding .features ul {
+    flex-direction: column;
+    row-gap: 8px;
+  }
+
+  .boarding .features ul li {
+    width: 100%;
+  }
+
+  .collapsable.active .content p {
+    max-height: 550px;
+  }
+}
+
+
+.contacts {
+  margin-top: 50px;
+}

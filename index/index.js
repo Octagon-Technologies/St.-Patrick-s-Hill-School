@@ -1,7 +1,3 @@
-let openMenuBtn = document.getElementById("openMenuBtn");
-let closeMenuBtn = document.getElementById("closeMenuBtn");
-
-let menuBar = document.querySelector(".nav-bar");
 let campusImageDescription = document.querySelectorAll(
   ".campus-image-description"
 );
@@ -12,7 +8,6 @@ let aboutSectionArrows = document.querySelectorAll(
 );
 let activeAboutSection = null;
 
-setUpMenu();
 setUpUI();
 setUpAboutToggleBar();
 
@@ -22,16 +17,6 @@ document.querySelectorAll(".campus").forEach((campus) => {
     campus.classList.toggle("active");
   });
 });
-
-function setUpMenu() {
-  openMenuBtn.onclick = () => {
-    menuBar.style.right = "0px";
-  };
-
-  closeMenuBtn.onclick = () => {
-    menuBar.style.right = "-225px";
-  };
-}
 
 function setUpUI() {
   if (window.innerWidth <= 600) {
@@ -46,8 +31,10 @@ function setUpAboutToggleBar() {
     element.onclick = () => {
       if (index == activeAboutSection) {
         activeAboutSection = null;
+      } else {
+        activeAboutSection = index;
       }
-      activeAboutSection = index;
+
       reloadAboutSections();
     };
   });
@@ -58,13 +45,13 @@ function reloadAboutSections() {
     if (index == activeAboutSection) {
       element.classList.add("active");
       let arrowType = aboutSectionArrows.item(index);
-      arrowType.classList.add("fa-arrow-up");
-      arrowType.classList.remove("fa-arrow-down");
+      arrowType.classList.add("fa-chevron-up");
+      arrowType.classList.remove("fa-chevron-down");
     } else {
       element.classList.remove("active");
       let arrowType = aboutSectionArrows.item(index);
-      arrowType.classList.add("fa-arrow-down");
-      arrowType.classList.remove("fa-arrow-up");
+      arrowType.classList.add("fa-chevron-down");
+      arrowType.classList.remove("fa-chevron-up");
     }
   });
 }

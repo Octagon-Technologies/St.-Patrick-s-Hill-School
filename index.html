@@ -8,6 +8,7 @@
     <title>Home | St Patrick's Hill School</title>
 
     <link rel="stylesheet" href="/index/index.css" />
+    <link rel="stylesheet" href="/global/global.css" />
 
     <script
       src="https://kit.fontawesome.com/1b0c87ce69.js"
@@ -32,19 +33,33 @@
           </div>
         </div>
 
-        <img id="logo" src="images/branding/logo-plain.png" alt="" />
+        <!-- Copy Paste to every page -->
+        <img id="logo" src="/images/branding/logo-plain.png" alt="" />
 
+        <!-- <p id="openMenuBtn">M</p> -->
         <i id="openMenuBtn" class="fa-solid fa-bars"></i>
 
         <div class="nav-bar">
+          <!-- <p id="closeMenuBtn">C</p> -->
           <i id="closeMenuBtn" class="fa-solid fa-close"></i>
 
           <ul>
-            <li><a class="active" href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Academic Excellence</a></li>
-            <li><a href="#">Extra Curricular</a></li>
-            <li><a href="#">Contact</a></li>
+            <li class="active"><a class="mainTab" href="#">Home</a></li>
+            <li><a class="mainTab" href="/about/about.html">About</a></li>
+            <li>
+              <div class="extendedTabTitle">
+                <a class="mainTab">Campuses</a>
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+
+              <div class="options">
+                <a class="subTab" href="#">Kiserian</a>
+                <a class="subTab" href="#">Malindi</a>
+              </div>
+            </li>
+            <li><a class="mainTab" href="#">Academic Excellence</a></li>
+            <li><a class="mainTab" href="#">Extra Curricular</a></li>
+            <li><a class="mainTab" href="#">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -73,7 +88,7 @@
             <div id="about-mission" class="about-section">
               <div class="header">
                 <h6 class="about-type">Mission</h6>
-                <i class="fa-solid fa-arrow-down"></i>
+                <i class="fa-solid fa-chevron-down"></i>
               </div>
               <p>
                 To foster and nurture a complete pupil in moral and aesthetic
@@ -88,7 +103,7 @@
             <div id="about-vision" class="about-section">
               <div class="header">
                 <h6 class="about-type">Vision</h6>
-                <i class="fa-solid fa-arrow-down"></i>
+                <i class="fa-solid fa-chevron-down"></i>
               </div>
               <p>
                 To create a learning institution of choice that is the dream and
@@ -181,8 +196,47 @@
           </div>
         </div>
       </div>
+
+      <div class="contacts">
+        <img src="/images/design/kenya-map.png" alt="" />
+
+        <div class="content">
+          <div class="sub-contact">
+            <h6>Contact Us</h6>
+
+            <p>
+              Kiserian Campus Contacts <br />
+              Phone: 0701-221-952, 0786-304-6944 <br />
+              Email: info@brookhurstschool.or.ke <br /><br />
+
+              Lavington Campus Contacts <br />
+              Phone: 0114 178 784 <br />
+              Email: BISLavington@brookhurstschool.or.ke
+            </p>
+          </div>
+
+          <div class="sub-contact">
+            <h6>About Us</h6>
+
+            <p>
+              Brookhurst International School is a progressive, multicultural,
+              value based day and boarding school based in Kenya.
+            </p>
+          </div>
+        </div>
+
+        <div class="design-by">
+        <p class="copyright">© Patrick's Hill Schools 2025.</p>
+
+        <p class="author">
+          Designed by
+          <a href="https://da-chelimo.netlify.app/">Andrew Chelimo</a>
+        </p>
+      </div>
+      </div>
     </main>
 
     <script src="/index/index.js"></script>
+    <script src="global/global.js"></script>
   </body>
 </html>
