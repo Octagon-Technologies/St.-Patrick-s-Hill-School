@@ -25,18 +25,5 @@ function reloadAboutSections() {
         $arrow.toggleClass("fa-chevron-up", isActive);
         $arrow.toggleClass("fa-chevron-down", !isActive);
     })
-//   aboutSections.forEach((element, index) => {
-//     if (index == activeAboutSection) {
-//       element.classList.add("active");
-//       let arrowType = aboutSectionArrows.item(index);
-//       arrowType.classList.add("fa-chevron-up");
-//       arrowType.classList.remove("fa-chevron-down");
-//     } else {
-//       element.classList.remove("active");
-//       let arrowType = aboutSectionArrows.item(index);
-//       arrowType.classList.add("fa-chevron-down");
-//       arrowType.classList.remove("fa-chevron-up");
-//     }
-//   });
 }
 

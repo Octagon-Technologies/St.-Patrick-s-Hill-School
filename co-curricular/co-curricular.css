@@ -1,0 +1,241 @@
+:root {
+  --green: #008d77;
+  --gold: #f6bc1c;
+  --textGrey: #3e484e;
+  --blue: #0b86b6;
+}
+
+.page-intro {
+  position: relative;
+  height: 65vh;
+  width: 100vw;
+}
+
+.page-intro::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.5)
+  );
+}
+
+.page-intro img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.cocurricular {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: auto;
+  margin-top: 48px;
+  padding-bottom: 40px;
+  justify-content: center;
+  gap: 36px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.cocurricular .header {
+  flex-basis: 40%;
+}
+
+.cocurricular .header h6 {
+  font-size: 2rem;
+  font-family: "Iceberg";
+  font-weight: 500;
+  color: var(--green);
+}
+
+.cocurricular .header p {
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+.cocurricular .content {
+  flex-basis: 60%;
+}
+
+.cocurricular .content p {
+  font-size: 1.1rem;
+  line-height: 1.7rem;
+  font-weight: 400;
+  color: var(--textGrey);
+  font-family: "Poppins";
+}
+
+@media screen and (max-width: 600px) {
+  .cocurricular {
+    flex-direction: column;
+    width: 90%;
+    gap: 30px;
+  }
+
+  .cocurricular .header {
+    width: 80%;
+  }
+
+  .cocurricular .header p {
+    margin-top: 8px;
+  }
+
+  .cocurricular .content {
+    margin-top: 14px;
+    width: 100%;
+  }
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-top: 4%;
+  margin-bottom: 24px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.activity {
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  overflow: hidden;
+  flex-direction: row;
+}
+
+.activity .header {
+  margin: 10px 0px;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.activity .header i {
+  display: none;
+}
+
+.activity img {
+  width: 25%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.activity .content {
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
+.activity .content h6 {
+  font-size: 1.6rem;
+  color: var(--green);
+  font-weight: 600;
+  font-family: "Advent Pro";
+}
+
+.activity .content p {
+  margin-top: 12px;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--textGrey);
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+@media screen and (max-width: 600px) {
+  .activity-list {
+    flex-direction: column;
+    width: 90%;
+    gap: 12px;
+    box-shadow: none;
+  }
+
+  .activity {
+    flex-direction: column-reverse;
+    margin-top: 0px;
+    padding: 0px 16px;
+    width: 100%;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+  }
+
+  .activity .header {
+    padding: 8px 0px;
+  }
+
+  .activity .header i {
+    display: block;
+    font-size: 1rem;
+    background-color: white;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    align-content: center;
+    border-radius: 50%;
+    border: 2px var(--green) solid;
+    color: var(--green);
+    /* color: white; */
+  }
+
+  .activity.active .header i {
+    background-color: var(--green);
+    color: white;
+    border: 0px;
+  }
+
+  .activity .content p {
+    max-height: 0px;
+    transition: all 1.25s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .activity.active .content p {
+    max-height: 600px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .activity img {
+    height: 0px;
+    width: 100%;
+    transition: all 0.25s;
+  }
+
+  .activity.active img {
+    width: 100%;
+    height: 35vh;
+    margin: auto;
+    margin-top: 16px;
+    margin-bottom: 24px;
+  }
+
+  .activity .content {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .activity .content h6 {
+    text-align: center;
+  }
+}
+
+
+.contacts {
+    margin-top: 5%;
+}
