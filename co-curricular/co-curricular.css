@@ -199,8 +199,9 @@
 
   .activity .content p {
     max-height: 0px;
-    transition: all 1.25s;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 2s;
+    /* transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1); */
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
     font-size: 1rem;
     line-height: 1.5rem;
   }
@@ -214,7 +215,7 @@
   .activity img {
     height: 0px;
     width: 100%;
-    transition: all 0.25s;
+    transition: all 1.5s;
   }
 
   .activity.active img {

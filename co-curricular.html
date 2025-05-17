@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Co-Curriculars</title>
 
-        <link rel="preload" href="/co-curricular/co-curricular.css" as="style" />
+    <link rel="preload" href="/co-curricular/co-curricular.css" as="style" />
     <link rel="preload" href="/global/global.css" as="style" />
 
     <link
@@ -41,14 +41,11 @@
 
         <ul>
           <li><a class="mainTab" href="/index.html">Home</a></li>
-          <li class="active">
-            <a class="mainTab" href="/about/about.html">About</a>
-          </li>
+          <li><a class="mainTab" href="/about.html">About</a></li>
           <li>
             <div class="extendedTabTitle">
-              <a>Campuses</a>
+              <a class="mainTab">Campuses</a>
               <i class="fa-solid fa-chevron-down"></i>
-              <!-- <p>^</p> -->
             </div>
 
             <div class="options">
@@ -56,9 +53,13 @@
               <a class="subTab" href="/campus/malindi.html">Malindi</a>
             </div>
           </li>
-          <li><a class="mainTab" href="#">Academic Excellence</a></li>
-          <li><a class="mainTab" href="#">Extra Curricular</a></li>
-          <li><a class="mainTab" href="#">Contact</a></li>
+          <!-- <li><a class="mainTab" href="">Academic Excellence</a></li> -->
+          <li  class="active">
+            <a class="mainTab" href="/co-curricular.html">Extra Curricular</a>
+          </li>
+          <li>
+            <a class="mainTab" href="/contact-us.html">Contact</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -205,44 +206,44 @@
       </div>
     </div>
 
-      <div class="contacts">
-        <img src="/images/design/kenya-map.png" alt="" />
+    <div class="contacts">
+      <img src="/images/design/kenya-map.png" alt="" />
 
-        <div class="content">
-          <div class="sub-contact">
-            <h6>Contact Us</h6>
+      <div class="content">
+        <div class="sub-contact">
+          <h6>Contact Us</h6>
 
-            <p>
-              Kiserian Campus Contacts <br />
-              Phone: 0723650905, 0746169810 <br />
-              Email: stpatrickshillschool@yahoo.com <br /><br />
+          <p>
+            Kiserian Campus Contacts <br />
+            Phone: 0723650905, 0746169810 <br />
+            Email: stpatrickshillschool@yahoo.com <br /><br />
 
-              Malindi Campus Contacts <br />
-              Phone: 0753957465<br />
-              Email: stpatrickshillschool@yahoo.com
-            </p>
-          </div>
-
-          <div class="sub-contact">
-            <h6>About Us</h6>
-
-            <p>
-              St. Patrick’s Hill Schools is a warm, value-driven, multicultural
-              institution that nurtures students through both day and boarding
-              options.
-            </p>
-          </div>
+            Malindi Campus Contacts <br />
+            Phone: 0753957465<br />
+            Email: stpatrickshillschool@yahoo.com
+          </p>
         </div>
 
-        <div class="design-by">
-          <p class="copyright">© Patrick's Hill Schools 2025.</p>
+        <div class="sub-contact">
+          <h6>About Us</h6>
 
-          <p class="author">
-            Designed by
-            <a href="https://da-chelimo.netlify.app/">Andrew Chelimo</a>
+          <p>
+            St. Patrick’s Hill Schools is a warm, value-driven, multicultural
+            institution that nurtures students through both day and boarding
+            options.
           </p>
         </div>
       </div>
+
+      <div class="design-by">
+        <p class="copyright">© Patrick's Hill Schools 2025.</p>
+
+        <p class="author">
+          Designed by
+          <a href="https://da-chelimo.netlify.app/">Andrew Chelimo</a>
+        </p>
+      </div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="/global/global.js"></script>
     <script src="/co-curricular/co-curricular.js"></script>

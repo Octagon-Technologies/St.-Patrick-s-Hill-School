@@ -42,6 +42,10 @@
   gap: 30px;
 }
 
+.nav-bar ul li {
+  position: relative;
+}
+
 .nav-bar ul li .mainTab {
   text-decoration: none;
   color: white;
@@ -75,8 +79,14 @@
   margin: auto;
 }
 
-.nav-bar ul li .extendedTabTitle a {
-  text-transform: capitalize;
+.nav-bar ul li.active .extendedTabTitle {
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 24px;
+}
+
+.nav-bar ul li.active .extendedTabTitle .mainTab {
+  padding: 0px;
 }
 
 .nav-bar ul li .extendedTabTitle:hover {
@@ -85,6 +95,11 @@
 
 .nav-bar ul li .extendedTabTitle i {
   margin-left: 8px;
+  color: white;
+}
+
+.nav-bar ul li.active .extendedTabTitle i {
+  color: var(--green);
 }
 
 .nav-bar ul li .options {
@@ -119,6 +134,26 @@
 #closeMenuBtn {
   display: none;
 }
+
+
+/* Menu: Responsive */
+@media screen and (min-width: 600px) {
+.nav-bar ul li .options {
+  max-height: 0px;
+  position: absolute;
+  top: 30px;
+  left: 0px;
+  right: 0px;
+  overflow: hidden;
+  transition: all 1s;
+}
+
+.nav-bar ul li.active .options {
+  top: 40px;
+}
+}
+
+
 
 /* Menu: Responsive */
 @media screen and (max-width: 600px) {
@@ -177,10 +212,6 @@
     width: 100%;
     text-align: center;
     border-radius: 24px;
-  }
-
-  .nav-bar ul li .extendedTabTitle {
-    text-transform: uppercase;
   }
 }
 
@@ -296,7 +327,7 @@
   .design-by .copyright {
     font-size: 0.95rem;
   }
-  
+
   .design-by .author {
     font-size: 1.1rem;
   }

@@ -64,27 +64,16 @@ function reloadImageAndDots() {
 }
 
 function setUpAboutToggleBar() {
-  document.onclick = () => {
-    activeAboutSection = null;
-    reloadAboutSections();
-  };
+  aboutSections.forEach((section, index) => {
+    section.onclick = () => {
+      if (index === activeAboutSection) {
+        activeAboutSection = null;
+      } else {
+        activeAboutSection = index;
+      }
 
-  aboutSections.forEach((element, index) => {
-    element.addEventListener(
-      "click",
-      (event) => {
-        // event.stopPropagation();
-
-        if (index === activeAboutSection) {
-          activeAboutSection = null;
-        } else {
-          activeAboutSection = index;
-        }
-
-        reloadAboutSections();
-      },
-      { capture: true }
-    );
+      reloadAboutSections();
+    };
   });
 }
 
