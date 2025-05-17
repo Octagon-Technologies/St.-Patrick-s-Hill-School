@@ -1,3 +1,11 @@
+let left = document.getElementById("left");
+let right = document.getElementById("right");
+
+let slider = document.querySelector(".slider .list");
+let images = document.querySelectorAll(".list .slide img");
+let dots = document.querySelectorAll(".dots li");
+let activeTab = 0;
+
 let campusImageDescription = document.querySelectorAll(
   ".campus-image-description"
 );
@@ -9,6 +17,7 @@ let aboutSectionArrows = document.querySelectorAll(
 let activeAboutSection = null;
 
 setUpUI();
+setUpNavigationArrowAndDots();
 setUpAboutToggleBar();
 
 // Toggle campus active class on tap for mobile
@@ -26,23 +35,62 @@ function setUpUI() {
   }
 }
 
-function setUpAboutToggleBar() {
-  aboutSections.forEach((element, index) => {
-    element.onclick = () => {
-      if (index == activeAboutSection) {
-        activeAboutSection = null;
-      } else {
-        activeAboutSection = index;
-      }
+function setUpNavigationArrowAndDots() {
+  left.onclick = () => {
+    activeTab = activeTab === 0 ? dots.length - 1 : activeTab - 1;
+    reloadImageAndDots();
+  };
 
-      reloadAboutSections();
+  right.onclick = () => {
+    activeTab = activeTab < dots.length - 1 ? activeTab + 1 : 0;
+    reloadImageAndDots();
+  };
+
+  dots.forEach((dot, index) => {
+    dot.onclick = () => {
+      activeTab = index;
+      reloadImageAndDots();
     };
+  });
+}
+
+function reloadImageAndDots() {
+  let offsetLeft = images[activeTab].offsetLeft;
+  slider.style.left = -offsetLeft + "px";
+
+  dots.forEach((dot, index) => {
+    $(dot).toggleClass("active", activeTab === index);
+  });
+}
+
+function setUpAboutToggleBar() {
+  document.onclick = () => {
+    activeAboutSection = null;
+    reloadAboutSections();
+  };
+
+  aboutSections.forEach((element, index) => {
+    element.addEventListener(
+      "click",
+      (event) => {
+        // event.stopPropagation();
+
+        if (index === activeAboutSection) {
+          activeAboutSection = null;
+        } else {
+          activeAboutSection = index;
+        }
+
+        reloadAboutSections();
+      },
+      { capture: true }
+    );
   });
 }
 
 function reloadAboutSections() {
   aboutSections.forEach((element, index) => {
-    if (index == activeAboutSection) {
+    if (index === activeAboutSection) {
       element.classList.add("active");
       let arrowType = aboutSectionArrows.item(index);
       arrowType.classList.add("fa-chevron-up");

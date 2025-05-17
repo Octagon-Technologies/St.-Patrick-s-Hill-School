@@ -75,6 +75,10 @@
   margin: auto;
 }
 
+.nav-bar ul li .extendedTabTitle a {
+  text-transform: capitalize;
+}
+
 .nav-bar ul li .extendedTabTitle:hover {
   color: var(--gold);
 }

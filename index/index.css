@@ -58,6 +58,7 @@ body {
   display: flex;
   overflow-x: hidden;
   flex-direction: row;
+  transition: all 0.75s;
 }
 
 .slide img {
@@ -66,6 +67,61 @@ body {
   object-fit: cover;
   scroll-snap-align: start;
   object-position: center;
+}
+
+.nav-arrows {
+  position: absolute;
+  z-index: 5;
+  color: white;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1vw;
+  right: 1vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-arrows i {
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  cursor: pointer;
+  align-content: center;
+  border-radius: 50%;
+}
+
+.nav-arrows i:hover {
+  background-color: var(--green);
+}
+
+.dots {
+  position: absolute;
+  bottom: 2vh;
+  z-index: 5;
+  display: flex;
+  gap: 6px;
+  list-style-type: none;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dots li {
+  width: 14px;
+  height: 14px;
+  background-color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  border-radius: 12px;
+  transition: all 0.75s;
+}
+
+.dots li.active {
+  width: 28px;
+  background-color: var(--green);
+}
+
+.dots li:hover:not(.active) {
+  background-color: var(--gold);
 }
 
 
@@ -295,10 +351,8 @@ body {
   opacity: 1;
 }
 
-/* Change :hover to .active */
 .campus:hover .campus-image p , /* For Laptop */
-.campus.active .campus-image p {
-  /* For Mobile */
+.campus.active .campus-image p { /* For Mobile */
   opacity: 0;
 }
 
@@ -317,7 +371,7 @@ body {
   transition: all 1.25s 0s;
 }
 
-.campus:hover .body {
+.campus:hover .body, .campus.active .body {
   transform: scaleY(1);
   opacity: 1;
   max-height: 200px;
@@ -375,8 +429,9 @@ body {
     transition: all 1s;
   }
 
-  .campus:hover .campus-image {
+  .campus:hover .campus-image,  .campus.active .campus-image {
     width: 60vw;
+    transition: all 1s;
   }
 
   .campus-image img {
@@ -398,14 +453,14 @@ body {
   }
 
   /* Change :hover to .active */
-  .campus:hover .body {
+.campus:hover .body, .campus.active .body {
     opacity: 1;
-    transition: all 2s 0.25s;
+    transition: all 1.5s 0.25s;
   }
 
-  .campus:not(hover) .body {
+  /* .campus:not(.active) .body, .campus:not(:hover) .body {
     transition: all 0.5s;
-  }
+  } */
 
   .campus .body p {
     font-size: 0.95rem;

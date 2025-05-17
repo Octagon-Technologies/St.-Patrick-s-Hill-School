@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Home | St Patrick's Hill School</title>
+
+  <link rel="preload" href="/index/index.css" as="style" />
+  <link rel="preload" href="/global/global.css" as="style" />
+
+  <link rel="preload" href="/images/campuses/igsce-kids.jpg" as="image" type="image/jpeg" />
 
     <link rel="stylesheet" href="/index/index.css" />
     <link rel="stylesheet" href="/global/global.css" />
@@ -22,16 +27,31 @@
         <div class="slider">
           <div class="list">
             <div class="slide">
-              <img src="/images/slider/labs.jpg" alt="" />
+              <img src="/images/campuses/igsce-kids.jpg" alt="" />
             </div>
             <div class="slide">
-              <img src="/images/slider/labs.jpg" alt="" />
+              <img src="/images/students/setbook-girls.webp" alt="" />
             </div>
             <div class="slide">
-              <img src="/images/slider/labs.jpg" alt="" />
+              <img src="/images/campuses/senior-boys.jpg" alt="" />
+            </div>
+            <div class="slide">
+              <img src="/images/extra-curriculars/clubs.jpg" alt="" />
             </div>
           </div>
         </div>
+
+        <div class="nav-arrows">
+          <i id="left" class="fa-solid fa-chevron-left"></i>
+          <i id="right" class="fa-solid fa-chevron-right"></i>
+        </div>
+
+        <ul class="dots">
+          <li class="active"></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
 
         <!-- Copy Paste to every page -->
         <img id="logo" src="/images/branding/logo-plain.png" alt="" />
@@ -45,7 +65,7 @@
 
           <ul>
             <li class="active"><a class="mainTab" href="#">Home</a></li>
-            <li><a class="mainTab" href="/about/about.html">About</a></li>
+            <li><a class="mainTab" href="/about.html">About</a></li>
             <li>
               <div class="extendedTabTitle">
                 <a class="mainTab">Campuses</a>
@@ -53,13 +73,15 @@
               </div>
 
               <div class="options">
-              <a class="subTab" href="/campus/kiserian.html">Kiserian</a>
-              <a class="subTab" href="/campus/malindi.html">Malindi</a>
+                <a class="subTab" href="/campus/kiserian.html">Kiserian</a>
+                <a class="subTab" href="/campus/malindi.html">Malindi</a>
               </div>
             </li>
-            <li><a class="mainTab" href="#">Academic Excellence</a></li>
-            <li><a class="mainTab" href="#">Extra Curricular</a></li>
-            <li><a class="mainTab" href="#">Contact</a></li>
+            <!-- <li><a class="mainTab" href="">Academic Excellence</a></li> -->
+            <li>
+              <a class="mainTab" href="/co-curricular.html">Extra Curricular</a>
+            </li>
+            <li><a class="mainTab" href="/contact-us.html">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -127,7 +149,7 @@
         <div class="campus-container">
           <div class="campus">
             <div class="campus-image">
-              <img src="images/campuses/kiserian.jpg" alt="" />
+              <img src="images/campuses/senior-boys.jpg" alt="" />
               <p class="campus-image-description">Kiserian</p>
             </div>
 
@@ -139,7 +161,7 @@
 
           <div class="campus">
             <div class="campus-image">
-              <img src="images/campuses/kiserian.jpg" alt="" />
+              <img src="images/students/primary-girls.webp" alt="" />
               <p class="campus-image-description">Malindi</p>
             </div>
 
@@ -157,40 +179,60 @@
 
         <div class="testi-container">
           <div class="testi">
-            <img class="profile-pic" src="images/slider/student.jpg" alt="" />
-            <p class="username">Abby Shauri</p>
-            <p class="role">Alumnus</p>
+            <img
+              class="profile-pic"
+              src="images/filler/old-black-man.jpg"
+              alt=""
+            />
+            <p class="username">Mr. Laswai</p>
+            <p class="role">Parent</p>
             <p class="message">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
-              labore? Nostrum exercitationem assumenda dicta qui maiores et enim
-              perspiciatis, tempora, quibusdam velit veniam, eos unde. Veritatis
-              labore a voluptates veniam.
+              St. Patrick’s Hill Schools holds a special place in my heart. For
+              nearly twenty years, I’ve been a proud parent here, with all my
+              children passing through its nurturing halls. That alone speaks
+              volumes. I’ve watched them grow—emotionally, physically, and
+              academically—thanks to the school’s warm environment, dedicated
+              staff, and firm foundation of discipline. It’s this blend of care
+              and structure that has shaped them into the respectful, grounded
+              young adults they are today.
             </p>
             <img class="quote" src="/images/design/quote.svg" alt="" />
           </div>
 
           <div class="testi">
-            <img class="profile-pic" src="images/slider/student.jpg" alt="" />
-            <p class="username">Abby Shauri</p>
-            <p class="role">Alumnus</p>
+            <img class="profile-pic" src="images/filler/old-woman.jpg" alt="" />
+            <p class="username">Dr. Wairimu Monica Waweru</p>
+            <p class="role">Alumnus (Class of '04)</p>
             <p class="message">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
-              labore? Nostrum exercitationem assumenda dicta qui maiores et enim
-              perspiciatis, tempora, quibusdam velit veniam, eos unde. Veritatis
-              labore a voluptates veniam.
+              February 5th, 2002 marked the start of a life-changing journey—the
+              opening of St. Patrick’s Senior School. I joined as one of the
+              first Form 2 students, struggling with poor grades and little hope
+              for the future. But Mr. and Mrs. Kang’ethe saw potential in me,
+              and everything changed. Discipline, respect, faith, and
+              all-rounded growth were at the heart of our learning. With just
+              five students, we received unwavering support, which helped me
+              rise from a D to an A. Today, I’m a doctor because of the
+              foundation St. Patrick’s gave me. This school on the hill will
+              always be my home.
             </p>
             <img class="quote" src="/images/design/quote.svg" alt="" />
           </div>
 
           <div class="testi">
-            <img class="profile-pic" src="images/slider/student.jpg" alt="" />
-            <p class="username">Abby Shauri</p>
-            <p class="role">Alumnus</p>
+            <img
+              class="profile-pic"
+              src="images/filler/young-woman.jpg"
+              alt=""
+            />
+            <p class="username">Linet Wanjiru</p>
+            <p class="role">Alumnus (Class of '24)</p>
             <p class="message">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
-              labore? Nostrum exercitationem assumenda dicta qui maiores et enim
-              perspiciatis, tempora, quibusdam velit veniam, eos unde. Veritatis
-              labore a voluptates veniam.
+              St. Patrick’s wasn’t just my school—it became my family. From
+              quiet Form 1 days to confidently leading debates and scoring top
+              grades, I’ve grown in every way. The teachers believed in me, even
+              when I doubted myself, and that made all the difference. I’m
+              walking into the future with courage, faith, and discipline—just
+              as St. Patrick’s taught me. Forever proud to be a Patrician!
             </p>
             <img class="quote" src="/images/design/quote.svg" alt="" />
           </div>
@@ -206,12 +248,12 @@
 
             <p>
               Kiserian Campus Contacts <br />
-              Phone: 0701-221-952, 0786-304-6944 <br />
-              Email: info@brookhurstschool.or.ke <br /><br />
+              Phone: 0723650905, 0746169810 <br />
+              Email: stpatrickshillschool@yahoo.com <br /><br />
 
-              Lavington Campus Contacts <br />
-              Phone: 0114 178 784 <br />
-              Email: BISLavington@brookhurstschool.or.ke
+              Malindi Campus Contacts <br />
+              Phone: 0753957465<br />
+              Email: stpatrickshillschool@yahoo.com
             </p>
           </div>
 
@@ -219,23 +261,25 @@
             <h6>About Us</h6>
 
             <p>
-              Brookhurst International School is a progressive, multicultural,
-              value based day and boarding school based in Kenya.
+              St. Patrick’s Hill Schools is a warm, value-driven, multicultural
+              institution that nurtures students through both day and boarding
+              options.
             </p>
           </div>
         </div>
 
         <div class="design-by">
-        <p class="copyright">© Patrick's Hill Schools 2025.</p>
+          <p class="copyright">© Patrick's Hill Schools 2025.</p>
 
-        <p class="author">
-          Designed by
-          <a href="https://da-chelimo.netlify.app/">Andrew Chelimo</a>
-        </p>
-      </div>
+          <p class="author">
+            Designed by
+            <a href="https://da-chelimo.netlify.app/">Andrew Chelimo</a>
+          </p>
+        </div>
       </div>
     </main>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="/index/index.js"></script>
     <script src="global/global.js"></script>
   </body>

@@ -176,14 +176,17 @@ form textarea::placeholder {
 }
 
 #submit-btn {
-  background-color: var(--green);
-  color: white;
   cursor: pointer;
   width: 100%;
   font-weight: 600;
   border: none;
   margin-top: 16px;
   font-size: 1.2rem;
+}
+
+#submit-btn.ready {
+  background-color: var(--green);
+  color: white;
 }
 
 #google-map {
@@ -193,6 +196,46 @@ form textarea::placeholder {
   margin: 24px auto;
   display: block;
     border: 0px;
+}
+
+.snackbar {
+    position: fixed;
+    bottom: 4px;
+    left: 8px;
+    right: 8px;
+    background-color: white;
+    display: block;
+    border-radius: 8px;
+    min-height: 40px;
+    transition: all 1s;
+    width: 100%;
+    padding: 16px 10px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.snackbar:not(.success):not(.error) {
+    width: 0px;
+    overflow: hidden;
+    padding: 0px;
+}
+
+.snackbar.success p, .snackbar.error p {
+    display: block;
+}
+
+.snackbar p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: none;
+    transition: all 1s;
+}
+
+.snackbar.success p span {
+    color: var(--green);
+}
+
+.snackbar.error p span {
+    color: rgb(255, 31, 91);
 }
 
 @media screen and (max-width: 600px) {
